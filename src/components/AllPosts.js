@@ -1,27 +1,23 @@
-// import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const AllPosts = ({ posts }) => {
-  //   useEffect(() => {
-  //     fetch("http://localhost:4000/addPost")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data);
+const AllPosts = () => {
+  const [posts, setPosts] = useState([]);
 
-  //         setPosts([...posts, data]);
-  //       });
-  //   });
-
-  console.log(posts);
+  useEffect(() => {
+    fetch("http://localhost:4000/allPosts")
+      .then((res) => res.json())
+      .then((data) => {
+        setPosts(data.cars);
+      });
+  });
 
   return (
-    <div className="grow3">
-      {posts.map((x) => (
-        <div className="box">
-          <img style={{ width: "150px" }} src={x.image} alt="img" />
-          <h3>{x.title}</h3>
-          <div>{x.location}</div>
-          <h5>{x.username}</h5>
-          <p>{x.description}</p>
+    <div className="grow3 d-flex wrap">
+      {posts.map((x, i) => (
+        <div key={i} className="box pntr">
+          <h3>Model: {x.model}</h3>
+          <div>Color: {x.color}</div>
+          <h5>Year old: {x.year}</h5>
         </div>
       ))}
     </div>

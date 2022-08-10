@@ -10,10 +10,13 @@ const Toolbar = () => {
   return (
     <div className="toolbar d-flex g20 space-btw">
       <div className="d-flex g20">
-        <Link to="/allPosts">All Posts</Link>
+        <Link to="/">Login</Link>
+        <Link to="/register">Register</Link>
       </div>
 
-      <button onClick={logout}>Logout</button>
+      <div className="d-flex toolbar-main">
+        <button onClick={logout}>Logout</button>
+      </div>
     </div>
   );
 };

@@ -117,7 +117,6 @@
 
 .app {
   background: lightsteelblue;
-  width: 100%;
   height: 100vh;
 }
 
@@ -161,15 +160,132 @@
   justify-content: space-around;
 }
 
-input {
+.login-box {
+  box-shadow: 0 0 10px #5983d6;
+  width: 400px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: #5e85b3;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px auto;
+  padding: 20px 0;
+}
+
+.login-box input {
+  padding: 8px;
+  font-size: 1em;
+}
+
+.login-box button {
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.1em;
+  width: 100px;
+  padding: 8px;
+  background: lightsteelblue;
+  border: 2px lightsteelblue;
+}
+
+.login-box button:hover {
+  background: darkblue;
+  color: white;
+}
+
+.register-box {
+  box-shadow: 0 0 10px #5983d6;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: #5e85b3;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px auto;
+  padding: 20px 0;
+}
+
+.register-box input {
+  padding: 8px;
+  font-size: 1em;
+}
+
+.register-box button {
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.1em;
+  width: 100px;
+  padding: 8px;
+  background: lightsteelblue;
+  border: 2px lightsteelblue;
+}
+
+.register-box button:hover {
+  background: darkblue;
+  color: white;
+}
+
+.error {
+  color: white;
+  height: 40px;
+  margin: 0;
+  text-align: center;
+}
+
+.profile img {
+  width: 300px;
+  object-position: center;
+  object-fit: contain;
+  margin: 40px;
+}
+
+.profile-box button {
+  border: 1px solid #5983d6;
+  background: #5983d6;
+  color: white;
+  border-radius: 4px;
+  width: 150px;
+}
+
+.profile-box button:hover {
+  background: transparent;
+  color: #551a88;
+}
+
+.card {
+  margin: 10px;
+  border: 1px solid gray;
+  box-shadow: 0 0 10px blueviolet;
+  border-radius: 8px;
   padding: 5px;
 }
 
-button {
-  padding: 5px;
-}
-
-.box {
+.card img {
   width: 200px;
-  background: #eeeeee;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card h3 {
+  color: #551a88;
+  padding: 15px;
+  font-size: 1.5em;
+}
+
+.user-box {
+  margin: 50px auto;
+}
+
+.user-box h1 {
+  margin-bottom: 50px;
+}
+
+.user-box img {
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px;
 }
