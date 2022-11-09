@@ -5,26 +5,15 @@ import MainContext from "../context/MainContext";
 const Modal = () => {
   const { tickets, user, setModal } = useContext(MainContext);
 
-  const http = async (url, data) => {
-    const options = {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    };
-
-    const res = await fetch("http://localhost:4000" + url, options);
-    return res.json();
-  };
+  const freeSeats = tickets.filter((x) => tickets.reserved !== "");
 
   const reserved = async () => {
     const seats = {
-      place: tickets.reserved,
+      seat: tickets.reserved,
       color: "",
     };
 
-    console.log("tickets.place");
+    console.log(freeSeats.place);
   };
 
   return (
@@ -42,8 +31,8 @@ const Modal = () => {
             <b>{user.username}</b>: {user.cash}€
           </div>
 
-          <div className="d-flex flex-wrap g10">
-            {tickets.map((x, i) => (
+          <div className="seats d-flex flex-wrap g10 m10">
+            {freeSeats.map((x, i) => (
               <div onClick={reserved} key={i} className="seat">
                 {x.place}
               </div>
@@ -54,8 +43,7 @@ const Modal = () => {
         <div className="ticket grow1 d-flex flex-column">
           <div>Places selected:</div>
           <div>{}</div>
-          <div>Price:</div>
-          <div>{}</div>
+          <div>Price: 7.99€</div>
           <button>Buy tikets</button>
         </div>
       </div>

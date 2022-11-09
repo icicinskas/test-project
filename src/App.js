@@ -13,6 +13,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [tickets, setTickets] = useState([]);
   const [movies, setMovies] = useState([]);
+  const [oneMovie, setOneMovie] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
   const [modal, setModal] = useState(false);
   const [showTickets, setShowTickets] = useState(false);
@@ -25,6 +26,8 @@ function App() {
     setTickets,
     movies,
     setMovies,
+    oneMovie,
+    setOneMovie,
     currentUser,
     setCurrentUser,
     modal,
@@ -42,7 +45,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App App1">
       <MainContext.Provider value={state}>
         <BrowserRouter>
           <Toolbar />

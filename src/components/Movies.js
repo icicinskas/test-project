@@ -2,14 +2,19 @@ import { useContext } from "react";
 import MainContext from "../context/MainContext";
 
 const Movies = () => {
-  const { movies, user, setModal } = useContext(MainContext);
+  const { movies, setOneMovie, user, setModal } = useContext(MainContext);
 
   const getMovies = movies.filter((x) => x.mpa <= user.age);
+
+  const chooseMovie = () => {
+    setModal(true);
+    setOneMovie();
+  };
 
   return (
     <div className=" d-flex g20 flex-wrap">
       {getMovies.map((x, i) => (
-        <div onClick={() => setModal(true)} className="movie" key={i}>
+        <div onClick={chooseMovie} className="movie" key={i}>
           <img src={x.image} alt="img" />
           <div className="title">
             <h2>{x.titleLtu}</h2>
