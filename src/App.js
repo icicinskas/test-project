@@ -45,7 +45,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App main">
+    <div className="App">
       <MainContext.Provider value={state}>
         <BrowserRouter>
           <Toolbar />
